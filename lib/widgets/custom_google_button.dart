@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shoes/core/utils.dart';
 
-class CustomButton extends StatelessWidget {
+class CustomGoogleButton extends StatelessWidget {
   final Widget child;
-  final VoidCallback onPressed;
   final Color color;
-  const CustomButton({
+  final VoidCallback onPressed;
+  const CustomGoogleButton({
     super.key,
     required this.child,
     required this.color,
@@ -18,20 +18,16 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: color,
-          fixedSize: Size(
+        fixedSize: Size(
           screenSize.width*0.42, 
           screenSize.height*0.065
-        
-          ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30)
-        )
+          )
 
+        
 
       ),
       onPressed: onPressed, 
-      child: child
+      child: child,
       );
-
   }
 }
