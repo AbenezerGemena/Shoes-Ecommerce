@@ -4,6 +4,7 @@ import 'package:shoes/core/themes.dart';
 import 'package:shoes/core/utils.dart';
 import 'package:shoes/widgets/custom_button.dart';
 import 'package:shoes/widgets/custom_form_field.dart';
+import 'package:shoes/widgets/custom_google_button.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -74,6 +75,12 @@ Widget build(BuildContext context) {
                     hintText: "Password",
                     validationRegExp: PASSWORD_VALIDATION_REGEX,
                     onSaved: (value) {},
+                    suffixIcon: IconButton(
+                      onPressed: (){}, 
+                      icon: Icon(
+                        Icons.visibility_off
+                      )
+                      )
                   ),
                 ],
               ),
@@ -89,7 +96,63 @@ Widget build(BuildContext context) {
                 ),
                 
               )
-              )
+              ),
+              SizedBox(height: screenSize.height*0.03,),
+              CustomGoogleButton(
+                color: Colors.white, 
+                onPressed: (){},
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+
+                    Image.network(
+
+                      googleLogo,
+                      height: 24,
+
+                    ),
+                    SizedBox(width: screenSize.width*0.01,),
+
+                    Text(
+                      'Sign Up with Google',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black
+                      ),
+                    ),
+
+                 
+                    
+
+                    
+                  ],
+                )
+                ),
+                 SizedBox(height: screenSize.height*0.1,),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Already Have An Account?',
+                          style: TextStyle(
+                            color: Color(0xFF707B81),
+                            fontSize: 12
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: (){},
+                          child: Text(
+                            'Sign In',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15
+                            ),
+                          ),
+                        )
+                      ],
+                    )
               
             ],
           ),

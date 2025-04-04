@@ -7,6 +7,7 @@ class CustomFormField extends StatelessWidget {
   final bool obscureText;
   final RegExp validationRegExp;
   final void Function(String?) onSaved;
+   final Widget? suffixIcon;
 
   const CustomFormField({
     super.key,
@@ -15,6 +16,7 @@ class CustomFormField extends StatelessWidget {
     this.obscureText = false,
     required this.validationRegExp,
     required this.onSaved,
+    this.suffixIcon
   });
 
   @override
@@ -35,6 +37,7 @@ class CustomFormField extends StatelessWidget {
             ),
           ),
           TextFormField(
+            
             obscureText: obscureText,
             onSaved: onSaved,
             validator: (value) {
@@ -44,6 +47,7 @@ class CustomFormField extends StatelessWidget {
               return "Enter a valid ${hintText.toLowerCase()}";
             },
             decoration: InputDecoration(
+              suffixIcon: suffixIcon,
               filled: true,
               fillColor: inputFieldColor,
               hintText: hintText,
