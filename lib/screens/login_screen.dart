@@ -75,6 +75,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       )
                       )
                   ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: (){}, 
+                      child: Text(
+                        'Recovery Password',
+                        style: TextStyle(
+                          color: Color(0xFF707B81),
+                          fontSize: 13
+                    
+                        ),
+                      )
+                      ),
+                  )
+                
                 ],
               ),
               SizedBox(height: screenSize.height*0.04,),
