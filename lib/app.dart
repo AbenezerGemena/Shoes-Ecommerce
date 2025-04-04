@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shoes/screens/signup_screen.dart';
+import 'package:shoes/screens/login_screen.dart';
+
 
 
 class App extends StatelessWidget {
@@ -11,7 +12,7 @@ class App extends StatelessWidget {
       
        title: 'Shoes Inventory',
       debugShowCheckedModeBanner: false, 
-      home: SignupScreen(),
+      home: LoginScreen(),
     );
   }
 }
