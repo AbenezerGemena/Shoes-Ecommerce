@@ -14,6 +14,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
   Size screenSize = Utils().getScreenSize(context);
@@ -21,16 +23,29 @@ class _LoginScreenState extends State<LoginScreen> {
   return Scaffold(
     resizeToAvoidBottomInset: true,
     backgroundColor: backgrounColor,
-    body: SafeArea(
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: screenSize.width * 0.1,
-            vertical: screenSize.height * 0.08,
-          ),
+    body: SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: screenSize.width * 0.08,
+          vertical: screenSize.height * 0.08,
+        ),
+        child: Form(
+          key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
+            
             children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: IconButton(
+                  onPressed: (){}, 
+                  icon: Icon(Icons.chevron_left)
+                  ),
+              ),
+
+              SizedBox(height: screenSize.height*0.03,),
+
+
               Center(
                 child: Text(
                   'Hello Again',
@@ -52,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(height: screenSize.height * 0.03),
-
+              
              
               Column(
                 children: [
@@ -112,15 +127,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-
+              
                     Image.network(
-
+              
                       googleLogo,
                       height: 24,
-
+              
                     ),
                     SizedBox(width: screenSize.width*0.01,),
-
+              
                     Text(
                       'Sign In with Google',
                       style: TextStyle(
@@ -128,16 +143,16 @@ class _LoginScreenState extends State<LoginScreen> {
                         color: Colors.black
                       ),
                     ),
-
+              
                  
                     
-
+              
                     
                   ],
                 )
                 ),
-                 SizedBox(height: screenSize.height*0.2,),
-
+                 SizedBox(height: screenSize.height*0.15,),
+              
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
