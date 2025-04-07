@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:shoes/screens/login_screen.dart';
-import 'package:shoes/screens/recovery_password_screen.dart';
-import 'package:shoes/screens/signup_screen.dart';
+import 'package:shoes/routes/navigator_rout.dart';
+import 'package:shoes/services/service_locator.dart';
 
 
 
 class App extends StatelessWidget {
-  const App({super.key});
+  final NavigatorRout _navigator = locator<NavigatorRout>();
+  App({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
-       title: 'Shoes Inventory',
       debugShowCheckedModeBanner: false, 
-      home: SignupScreen(),
+      navigatorKey: _navigator.navigatorKey,
+      initialRoute:"intro",
+      routes: _navigator.routes,
     );
   }
 }
