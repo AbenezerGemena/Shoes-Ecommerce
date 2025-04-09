@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:shoes/app.dart';
 import 'package:shoes/services/service_locator.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   setupLocator();
-  runApp( 
+  
+  runApp(
     DevicePreview(
-      enabled: true,
-      builder: (context) => App()
-      )
- 
-
+      enabled: true, 
+      builder: (context) => App(),
+    ),
   );
 }
-

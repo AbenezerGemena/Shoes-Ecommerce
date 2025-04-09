@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:shoes/routes/navigator_rout.dart';
 import 'package:shoes/widgets/custom_button.dart';
 import 'package:shoes/widgets/custom_form_field.dart';
 
@@ -12,8 +14,26 @@ class RecoveryPasswordScreen extends StatefulWidget {
 
 class _RecoveryPasswordScreenState extends State<RecoveryPasswordScreen> {
 
+  final GetIt _getIt = GetIt.instance;
+  late NavigatorRout _navigatorRout;
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
   bool isLoading = false;
+
+
+  @override
+  void initState() {
+    super.initState();
+    _navigatorRout = _getIt.get<NavigatorRout>();
+  }
+
+  @override
+  void dispose() {
+    
+    super.dispose();
+    _emailController.dispose();
+  }
 
   void handleContinue() {
     if (_formKey.currentState!.validate()) {
@@ -44,7 +64,10 @@ class _RecoveryPasswordScreenState extends State<RecoveryPasswordScreen> {
               const SizedBox(height: 50),
               IconButton(
                 icon: const Icon(Icons.arrow_back),
-                onPressed: () => Navigator.pop(context),
+                onPressed: (){
+                  _navigatorRout.goBack();
+
+                },
               ),
               const SizedBox(height: 20),
               const Center(
@@ -65,6 +88,7 @@ class _RecoveryPasswordScreenState extends State<RecoveryPasswordScreen> {
               ),
               const SizedBox(height: 40),
               CustomFormField(
+                controller:_emailController,
                 hintText: "Email Address",
                 title: "Email Address",
                 obscureText: false,

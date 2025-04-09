@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:shoes/core/constants.dart';
 import 'package:shoes/core/themes.dart';
 import 'package:shoes/core/utils.dart';
+import 'package:shoes/routes/navigator_rout.dart';
 import 'package:shoes/widgets/custom_button.dart';
 import 'package:shoes/widgets/custom_form_field.dart';
 import 'package:shoes/widgets/custom_google_button.dart';
@@ -14,8 +16,42 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final GetIt _getIt = GetIt.instance;
+  late NavigatorRout _navigatorRout;
+
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+    bool _passwordVisible = false;
+
+  String? email, password;
+
+  void _togglePasswordVisibility(){
+    setState(() {
+      _passwordVisible = !_passwordVisible;
+    });
+   
+  }
+
+
+  @override
+  void initState() {
+    super.initState();
+
+    _navigatorRout  = _getIt.get<NavigatorRout>();
+  }
+ 
+
+ 
+ 
+
+  @override
+  void dispose() {
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+  }
   @override
   Widget build(BuildContext context) {
   Size screenSize = Utils().getScreenSize(context);
@@ -38,7 +74,11 @@ class _LoginScreenState extends State<LoginScreen> {
               Align(
                 alignment: Alignment.topLeft,
                 child: IconButton(
-                  onPressed: (){}, 
+                  onPressed: (){
+
+                    _navigatorRout.goBack();
+
+                  }, 
                   icon: Icon(Icons.chevron_left)
                   ),
               ),
@@ -73,27 +113,42 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                 
                   CustomFormField(
+                    controller: _emailController,
+                    
                     title: 'Email Address',
                     hintText: "Email",
                     validationRegExp: EMAIL_VALIDATION_REGEX,
-                    onSaved: (value) {},
+                    onSaved: (value) {
+                      setState(() {
+                        email = value;
+                        
+                      });
+                    },
                   ),
                   CustomFormField(
+                    controller: _passwordController,
                     title: 'Password',
                     hintText: "Password",
                     validationRegExp: PASSWORD_VALIDATION_REGEX,
-                    onSaved: (value) {},
+                    obscureText: !_passwordVisible,
+                    onSaved: (value) {
+                      setState(() {
+                        password = value;
+                      });
+                    },
                     suffixIcon: IconButton(
-                      onPressed: (){}, 
+                      onPressed: _togglePasswordVisibility, 
                       icon: Icon(
-                        Icons.visibility_off
+                         _passwordVisible?Icons.visibility:Icons.visibility_off
                       )
                       )
                   ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
-                      onPressed: (){}, 
+                      onPressed: (){
+                        _navigatorRout.pushNamed("/recovery");
+                      }, 
                       child: Text(
                         'Recovery Password',
                         style: TextStyle(
@@ -110,7 +165,13 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: screenSize.height*0.04,),
              CustomButton(
               color: Color(0xFF5B9EE1), 
-              onPressed: (){},
+              onPressed: (){
+                if(_formKey.currentState?.validate()??false){
+                  _formKey.currentState?.save();
+                  _navigatorRout.pushReplacementNamed("/home");
+                }
+                
+              },
               child: const Text(
                 'Sign In',
                 style: TextStyle(
@@ -151,7 +212,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 )
                 ),
-                 SizedBox(height: screenSize.height*0.15,),
+                 SizedBox(height: screenSize.height*0.12,),
               
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -164,7 +225,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         TextButton(
-                          onPressed: (){},
+                          onPressed: (){
+                           _navigatorRout.pushNamed("/signup");
+                          },
                           child: Text(
                             'Sign Up For Free',
                             style: TextStyle(

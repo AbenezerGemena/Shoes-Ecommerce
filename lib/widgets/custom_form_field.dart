@@ -6,6 +6,7 @@ class CustomFormField extends StatelessWidget {
   final String title;
   final bool obscureText;
   final RegExp validationRegExp;
+  final TextEditingController controller;
   final void Function(String?) onSaved;
    final Widget? suffixIcon;
 
@@ -15,6 +16,7 @@ class CustomFormField extends StatelessWidget {
     required this.title,
     this.obscureText = false,
     required this.validationRegExp,
+    required this.controller,
     required this.onSaved,
     this.suffixIcon
   });
@@ -37,6 +39,7 @@ class CustomFormField extends StatelessWidget {
             ),
           ),
           TextFormField(
+            controller: controller,
             
             obscureText: obscureText,
             onSaved: onSaved,

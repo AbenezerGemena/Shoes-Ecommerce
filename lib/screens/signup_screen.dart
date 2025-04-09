@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:shoes/core/constants.dart';
 import 'package:shoes/core/themes.dart';
 import 'package:shoes/core/utils.dart';
+import 'package:shoes/routes/navigator_rout.dart';
 import 'package:shoes/widgets/custom_button.dart';
 import 'package:shoes/widgets/custom_form_field.dart';
 import 'package:shoes/widgets/custom_google_button.dart';
@@ -14,7 +16,38 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+  final GetIt _getIt = GetIt.instance;
+  late NavigatorRout _navigatorRout;
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController  = TextEditingController();
+
+  bool _passwordVisible = false;
+
+  String? email, password,name;
+
+  void _togglePasswordVisibility(){
+    setState(() {
+      _passwordVisible = !_passwordVisible;
+    });
+   
+  }
+  @override
+  void initState() {
+    super.initState();
+    _navigatorRout = _getIt.get<NavigatorRout>();
+  }
+
+  @override
+  void dispose() {
+    
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _nameController.dispose();
+  }
    
   @override
  @override
@@ -38,7 +71,9 @@ Widget build(BuildContext context) {
               Align(
                 alignment: Alignment.topLeft,
                 child: IconButton(
-                  onPressed: (){}, 
+                  onPressed: (){
+                    _navigatorRout.goBack();
+                  }, 
                   icon: Icon(Icons.chevron_left)
                   ),
               ),
@@ -70,35 +105,58 @@ Widget build(BuildContext context) {
               Column(
                 children: [
                   CustomFormField(
+                    controller:_nameController ,
                     title: 'Your Name',
                     hintText: "Name",
                     validationRegExp: NAME_VALIDATION_REGEX,
-                    onSaved: (value) {},
+                    onSaved: (value) {
+                      setState(() {
+                        name = value;
+                      });
+                    },
                   ),
                   CustomFormField(
+                    controller: _emailController,
                     title: 'Email Address',
                     hintText: "Email",
                     validationRegExp: EMAIL_VALIDATION_REGEX,
-                    onSaved: (value) {},
+                    onSaved: (value) {
+                      setState(() {
+                        email = value;
+                      });
+                    },
                   ),
                   CustomFormField(
+                    controller: _passwordController,
                     title: 'Password',
                     hintText: "Password",
                     validationRegExp: PASSWORD_VALIDATION_REGEX,
-                    onSaved: (value) {},
+                    obscureText: !_passwordVisible,
+                    onSaved: (value) {
+                      setState(() {
+                        password = value;
+                      });
+                    },
                     suffixIcon: IconButton(
-                      onPressed: (){}, 
+                      onPressed: _togglePasswordVisibility, 
                       icon: Icon(
-                        Icons.visibility_off
+                         _passwordVisible?Icons.visibility:Icons.visibility_off
                       )
                       )
                   ),
                 ],
               ),
-              SizedBox(height: screenSize.height*0.01,),
+              SizedBox(height: screenSize.height*0.035,),
              CustomButton(
               color: Color(0xFF5B9EE1), 
-              onPressed: (){},
+              onPressed: (){
+                if(_formKey.currentState?.validate()??false){
+                  _formKey.currentState?.save();
+                  _navigatorRout.pushReplacementNamed("/home");
+                  
+                }
+                
+              },
               child: const Text(
                 'Sign up',
                 style: TextStyle(
@@ -108,7 +166,7 @@ Widget build(BuildContext context) {
                 
               )
               ),
-              SizedBox(height: screenSize.height*0.03,),
+              SizedBox(height: screenSize.height*0.022,),
               CustomGoogleButton(
                 color: Colors.white, 
                 onPressed: (){},
@@ -139,7 +197,7 @@ Widget build(BuildContext context) {
                   ],
                 )
                 ),
-                 SizedBox(height: screenSize.height*0.1,),
+                 SizedBox(height: screenSize.height*0.07,),
               
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -152,7 +210,9 @@ Widget build(BuildContext context) {
                           ),
                         ),
                         TextButton(
-                          onPressed: (){},
+                          onPressed: (){
+                           _navigatorRout.pushNamed("/login");
+                          },
                           child: Text(
                             'Sign In',
                             style: TextStyle(

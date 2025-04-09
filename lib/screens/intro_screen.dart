@@ -1,8 +1,10 @@
+
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:shoes/core/constants.dart';
-import 'package:shoes/screens/onboarding_screen.dart';
+
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -16,11 +18,8 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 13), (){
-         Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const OnboardingScreen()),
-            );
+    Timer(const Duration(seconds: 5), (){
+       Navigator.pushReplacementNamed(context, "/signup");
 
     });
   }
