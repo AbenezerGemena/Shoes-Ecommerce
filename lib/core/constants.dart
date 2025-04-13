@@ -1,7 +1,9 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:shoes/screens/favourite_screen.dart';
 import 'package:shoes/screens/home_screen.dart';
+import 'package:shoes/screens/profiel_screen.dart';
 
 final RegExp EMAIL_VALIDATION_REGEX = RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
 
@@ -18,10 +20,10 @@ const String googleLogo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9G
 final List<Widget> screens = [
 
   HomeScreen(),
+  FavouriteScreen(),
   HomeScreen(),
   HomeScreen(),
-  HomeScreen(),
-  HomeScreen(),
+  ProfielScreen(),
   
 
 
