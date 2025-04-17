@@ -12,7 +12,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       navigatorKey: _navigator.navigatorKey,
-      initialRoute: "/layout",
+      initialRoute: "/home",
       onGenerateRoute: (settings) {
         final routeBuilder = _navigator.routes[settings.name];
         if (routeBuilder != null) {

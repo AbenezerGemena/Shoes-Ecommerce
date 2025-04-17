@@ -70,12 +70,15 @@ Widget build(BuildContext context) {
             children: [
               Align(
                 alignment: Alignment.topLeft,
-                child: IconButton(
-                  onPressed: (){
-                    _navigatorRout.goBack();
-                  }, 
-                  icon: Icon(Icons.chevron_left)
-                  ),
+                child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: IconButton(
+                    onPressed: (){
+                      _navigatorRout.goBack();
+                    }, 
+                    icon: Icon(Icons.chevron_left)
+                    ),
+                ),
               ),
               SizedBox(height: screenSize.height*0.02,),
 

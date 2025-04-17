@@ -18,7 +18,7 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 5), (){
+    Timer(const Duration(seconds: 15), (){
        Navigator.pushReplacementNamed(context, "/signup");
 
     });
