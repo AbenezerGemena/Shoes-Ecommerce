@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shoes/core/constants.dart';
 import 'package:shoes/core/themes.dart';
 import 'package:shoes/core/utils.dart';
+import 'package:shoes/widgets/bottom_best_chois_widget.dart';
 import 'package:shoes/widgets/custom_shoes_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -123,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         "Popular Shoes",
                         style: TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.w500
+                          fontWeight: FontWeight.normal
                         ),
                       
                       ),
@@ -131,7 +132,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         "See All",
                         style: TextStyle(
                           fontSize: 13,
-                          color: Color(0xFF5B9EE1)
+                          color: Color(0xFF5B9EE1),
+                          fontWeight: FontWeight.normal
                         ),
                       )
                     ],
@@ -142,8 +144,42 @@ class _HomeScreenState extends State<HomeScreen> {
                  
                 ],
               ),
+              SizedBox(height: screenSize.height*0.015,),
         
-              CustomShoesCard()
+              CustomShoesCard(),
+              SizedBox(height: screenSize.height*0.044,),
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "New Arrivals",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal
+                        ),
+                      
+                      ),
+                      Text(
+                        "See All",
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Color(0xFF5B9EE1),
+                          fontWeight: FontWeight.normal
+                        ),
+                      )
+                    ],
+                  ),
+        
+                 
+        
+                 
+                ],
+              ),
+              SizedBox(height: screenSize.height*0.015,),
+
+              BottomBestChoisWidget()
               
               
         
@@ -176,7 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _shoesBrandBanner() {
   Size screenSize = Utils().getScreenSize(context);
   return SizedBox(
-    height: 50,
+    height: screenSize.height*0.05,
     child: ListView.separated(
       scrollDirection: Axis.horizontal,
       itemCount: productBrands.length,

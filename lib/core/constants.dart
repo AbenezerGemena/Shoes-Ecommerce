@@ -99,3 +99,40 @@ final List<Map<String,dynamic>> products = [
 
 ];
 
+final List<Map<String,dynamic>> bottomProduct = [
+  {
+    "name" : "Nike Jordan",
+    "price": 345.2393,
+    "image": "https://i.pinimg.com/736x/6a/b8/f7/6ab8f71806bd568e4d229658e7e979f6.jpg"
+  },
+  {
+    "name" : "Nike Jordan",
+    "price": 345.2393,
+    "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png"
+  },
+    {
+    "name" : "Nike Jordan",
+    "price": 345.2393,
+    "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png"
+  },
+
+    {
+    "name" : "Nike Jordan",
+    "price": 345.2393,
+    "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png"
+  },
+  {
+    "name" : "Nike Jordan",
+    "price": 345.2393,
+    "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png"
+  },
+    {
+    "name" : "Nike Jordan",
+    "price": 345.2393,
+    "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png"
+  },
+
+];
+
+
+

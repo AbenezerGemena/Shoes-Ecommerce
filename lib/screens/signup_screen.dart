@@ -155,7 +155,7 @@ Widget build(BuildContext context) {
               onPressed: (){
                 if(_formKey.currentState?.validate()??false){
                   _formKey.currentState?.save();
-                  _navigatorRout.pushReplacementNamed("/home");
+                  _navigatorRout.pushReplacementNamed("/layout");
                   
                 }
                 

@@ -4,16 +4,13 @@ import 'package:shoes/core/utils.dart';
 
 class CustomShoesCard extends StatelessWidget {
   const CustomShoesCard({super.key});
-  
-  // BuildContext get context;
-  
 
- @override
+  @override
   Widget build(BuildContext context) {
-    Size screenSize =  Utils().getScreenSize(context);
-    
+    Size screenSize = Utils().getScreenSize(context);
+
     return SizedBox(
-      height: screenSize.height*0.3,
+      height: screenSize.height * 0.28,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -21,16 +18,17 @@ class CustomShoesCard extends StatelessWidget {
         separatorBuilder: (_, __) => const SizedBox(width: 16),
         itemBuilder: (context, index) {
           final product = products[index];
-          return _buildProductCard(product);
+          return _buildProductCard(context, product); // Pass context here
         },
       ),
     );
   }
 
-  Widget _buildProductCard(Map<String, dynamic> product) {
-    
+  Widget _buildProductCard(BuildContext context, Map<String, dynamic> product) {
+    Size screenSize = Utils().getScreenSize(context);
+
     return Container(
-      width:160 ,
+      width: screenSize.width * 0.46,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -48,20 +46,20 @@ class CustomShoesCard extends StatelessWidget {
           Center(
             child: Image.network(
               product["image"],
-              height: 100,
+              height: screenSize.height*0.08,
               fit: BoxFit.contain,
             ),
           ),
-         
+          const Spacer(),
           const Text(
             "BEST SELLER",
             style: TextStyle(
               color: Colors.blue,
               fontSize: 12,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
             ),
           ),
-          const SizedBox(height: 4),
+          SizedBox(height:screenSize.height*0.01 ),
           Text(
             product["name"],
             style: const TextStyle(
@@ -69,7 +67,7 @@ class CustomShoesCard extends StatelessWidget {
               fontSize: 14,
             ),
           ),
-          const SizedBox(height: 4),
+          //const SizedBox(height: ),
           Text(
             "\$${product["price"].toStringAsFixed(2)}",
             style: const TextStyle(fontSize: 14),
