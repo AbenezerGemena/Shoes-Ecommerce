@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shoes/layout/screen_layout.dart';
+import 'package:shoes/screens/details_screen.dart';
 import 'package:shoes/screens/favourite_screen.dart';
 import 'package:shoes/screens/home_screen.dart';
 import 'package:shoes/screens/intro_screen.dart';
@@ -20,7 +21,8 @@ class NavigatorRout {
     "/home" : (context) => const HomeScreen(),
     "/layout" : (context) => const ScreenLayout(),
     "/profiel" : (context) => const ProfielScreen(),
-    "/favourite" : (context) => const FavouriteScreen()
+    "/favourite" : (context) => const FavouriteScreen(),
+    "/details" : (context) => const DetailsScreen(),
     
 
 
