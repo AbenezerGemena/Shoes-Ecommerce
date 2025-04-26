@@ -5,6 +5,7 @@ import 'package:shoes/screens/favourite_screen.dart';
 import 'package:shoes/screens/home_screen.dart';
 import 'package:shoes/screens/intro_screen.dart';
 import 'package:shoes/screens/login_screen.dart';
+import 'package:shoes/screens/my_cart_screen.dart';
 import 'package:shoes/screens/profiel_screen.dart';
 import 'package:shoes/screens/recovery_password_screen.dart';
 import 'package:shoes/screens/signup_screen.dart';
@@ -23,6 +24,7 @@ class NavigatorRout {
     "/profiel" : (context) => const ProfielScreen(),
     "/favourite" : (context) => const FavouriteScreen(),
     "/details" : (context) => const DetailsScreen(),
+    "/cart" : (context) => const MyCartScreen()
     
 
 
