@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:shoes/models/product_mode.dart';
 import 'package:shoes/screens/favourite_screen.dart';
 import 'package:shoes/screens/home_screen.dart';
 import 'package:shoes/screens/profiel_screen.dart';
@@ -132,6 +133,89 @@ final List<Map<String,dynamic>> bottomProduct = [
     "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png"
   },
 
+];
+
+
+
+final List<ProductMode> productsModels = [
+  ProductMode(
+    name: 'Nike Jordan',
+    price: 58.7,
+    imageUrl: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png',
+    colors: [Colors.yellow, Colors.green, Colors.cyan],
+  ),
+  ProductMode(
+    name: 'Nike Air Max',
+    price: 37.8,
+    imageUrl: 'https://blackcamel.pk/cdn/shop/files/DSC4056_1200x_4b744621-abef-47a0-8287-97d096ed8355.jpg',
+    colors: [Colors.blue, Colors.grey],
+  ),
+  ProductMode(
+    name: 'Nike Club Max',
+    price: 47.7,
+    imageUrl: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png',
+    colors: [Colors.blue, Colors.yellow],
+  ),
+  ProductMode(
+    name: 'Nike Air Max',
+    price: 57.6,
+    imageUrl: 'https://m.media-amazon.com/images/I/71f3BmjCwtL._AC_UY1000_.jpg',
+    colors: [Colors.cyan, Colors.purple],
+  ),
+
+
+
+
+    ProductMode(
+    name: 'Nike Jordan',
+    price: 58.7,
+    imageUrl: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png',
+    colors: [Colors.yellow, Colors.green, Colors.cyan],
+  ),
+  ProductMode(
+    name: 'Nike Air Max',
+    price: 37.8,
+    imageUrl: 'https://blackcamel.pk/cdn/shop/files/DSC4056_1200x_4b744621-abef-47a0-8287-97d096ed8355.jpg',
+    colors: [Colors.blue, Colors.grey],
+  ),
+  ProductMode(
+    name: 'Nike Club Max',
+    price: 47.7,
+    imageUrl: 'https://m.media-amazon.com/images/I/71f3BmjCwtL._AC_UY1000_.jpg',
+    colors: [Colors.blue, Colors.yellow],
+  ),
+  ProductMode(
+    name: 'Nike Air Max',
+    price: 57.6,
+    imageUrl: 'https://m.media-amazon.com/images/I/71f3BmjCwtL._AC_UY1000_.jpg',
+    colors: [Colors.cyan, Colors.purple],
+  ),
+
+
+      ProductMode(
+    name: 'Nike Jordan',
+    price: 58.7,
+    imageUrl: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png',
+    colors: [Colors.yellow, Colors.green, Colors.cyan],
+  ),
+  ProductMode(
+    name: 'Nike Air Max',
+    price: 37.8,
+    imageUrl: 'https://blackcamel.pk/cdn/shop/files/DSC4056_1200x_4b744621-abef-47a0-8287-97d096ed8355.jpg',
+    colors: [Colors.blue, Colors.grey],
+  ),
+  ProductMode(
+    name: 'Nike Club Max',
+    price: 47.7,
+    imageUrl: 'https://m.media-amazon.com/images/I/71f3BmjCwtL._AC_UY1000_.jpg',
+    colors: [Colors.blue, Colors.yellow],
+  ),
+  ProductMode(
+    name: 'Nike Air Max',
+    price: 57.6,
+    imageUrl: 'https://m.media-amazon.com/images/I/71f3BmjCwtL._AC_UY1000_.jpg',
+    colors: [Colors.cyan, Colors.purple],
+  ),
 ];
 
 
