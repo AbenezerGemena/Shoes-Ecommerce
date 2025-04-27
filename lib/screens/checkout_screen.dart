@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:shoes/core/themes.dart';
 import 'package:shoes/core/utils.dart';
 
-class MyCartScreen extends StatefulWidget {
-  const MyCartScreen({super.key});
+class CheckoutScreen extends StatefulWidget {
+  const CheckoutScreen({super.key});
 
   @override
-  State<MyCartScreen> createState() => _MyCartScreenState();
+  State<CheckoutScreen> createState() => _CheckoutScreenState();
 }
 
-class _MyCartScreenState extends State<MyCartScreen> {
+class _CheckoutScreenState extends State<CheckoutScreen> {
   late Size screenSize;
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                     SizedBox(width: screenSize.width*0.25,),
                   
                     Text(
-                      'My Cart',
+                      'Checkout',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -160,7 +160,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                       ),
                 
                       child: Text(
-                        'Checkout',
+                        'Payment',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 18,
@@ -180,11 +180,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
       
         ],
       ),
-      
-      
-   
-
-   
 
     );
   }
