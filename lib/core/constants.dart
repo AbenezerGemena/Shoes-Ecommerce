@@ -240,6 +240,15 @@ final List<CartModel> cartList = [
     productName: "Nike man shoes", 
     size: 'L'
     ),
+
+   CartModel(
+    imageUrl: "https://m.media-amazon.com/images/I/51B3VOUg52L._BO30,255,255,255_UF900,850_SR1910,1000,0,C_QL100_.jpg", 
+    price: 234.43, 
+    productName: "Nike man shoes", 
+    size: 'L'
+    ),
+
+
   CartModel(
     imageUrl: "https://m.media-amazon.com/images/I/51B3VOUg52L._BO30,255,255,255_UF900,850_SR1910,1000,0,C_QL100_.jpg", 
     price: 234.43, 
@@ -258,18 +267,17 @@ final List<CartModel> cartList = [
     productName: "Nike man shoes", 
     size: 'L'
     ),
-  CartModel(
+
+   CartModel(
     imageUrl: "https://m.media-amazon.com/images/I/51B3VOUg52L._BO30,255,255,255_UF900,850_SR1910,1000,0,C_QL100_.jpg", 
     price: 234.43, 
     productName: "Nike man shoes", 
     size: 'L'
     ),
-  CartModel(
-    imageUrl: "https://m.media-amazon.com/images/I/51B3VOUg52L._BO30,255,255,255_UF900,850_SR1910,1000,0,C_QL100_.jpg", 
-    price: 234.43, 
-    productName: "Nike man shoes", 
-    size: 'L'
-    ),
+ 
+ 
+ 
+
 
 ];
 
