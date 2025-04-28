@@ -47,6 +47,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   )
                 ],
               ),
+              SizedBox(height: screenSize.height*0.04,),
 
               Expanded(
                 child: Padding(
@@ -328,6 +329,56 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 style: TextStyle(
                   fontWeight: FontWeight.bold
                 ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: screenSize.height*0.045,
+                    width: screenSize.width*0.09,
+                    decoration: BoxDecoration(
+                      color: backgrounColor,
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+              
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(
+                        'https://pngimg.com/d/paypal_PNG7.png',
+                        fit: BoxFit.cover,
+                      ),
+                    )
+              
+                      
+                      
+                  ),
+              
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              
+                    children: [
+                      Text(
+                        'PayPal card'
+                      ),
+              
+                      Text(
+                        '.........324834754068564',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFF707B81)
+                        ),
+                      )
+                    ],
+                  ),
+              
+                  IconButton(
+                    onPressed: (){}, 
+                    icon: Icon(
+                      Icons.keyboard_arrow_down
+                    )
+                    )
+                ],
               ),
                
           
