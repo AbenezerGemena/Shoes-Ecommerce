@@ -150,7 +150,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                          )
                       ],
                     ),
-                    SizedBox(height: screenSize.height*0.025,),
+                    SizedBox(height: screenSize.height*0.028,),
                 
                     ElevatedButton(
                       onPressed: (){}, 
