@@ -12,6 +12,8 @@ class CheckoutScreen extends StatefulWidget {
 
 class _CheckoutScreenState extends State<CheckoutScreen> {
   late Size screenSize;
+  
+
   @override
   Widget build(BuildContext context) {
     screenSize = Utils().getScreenSize(context);
@@ -132,7 +134,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               ),
               SizedBox(height: screenSize.height * 0.025),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  showCongratulationMessage(context);
+                  
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   fixedSize: Size(screenSize.width, screenSize.height * 0.07),
@@ -393,4 +398,75 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     
     );
   }
+
+  void showCongratulationMessage(BuildContext context){
+    showDialog(
+    context: context, 
+    builder: (BuildContext context){
+      return AlertDialog(
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: screenSize.width*0.01,
+            vertical: screenSize.height*0.05
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade200,
+                 
+                  shape: BoxShape.circle
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(200),
+                  child: Image.network(
+                    'https://www.shutterstock.com/image-vector/exploding-party-popper-confetti-bright-600nw-1292838640.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            
+              Text(
+                "Your Payment Is\n \t\tSuccessful",
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 20
+                ),
+              ),
+              SizedBox(height: screenSize.height*0.025,),
+          
+              ElevatedButton(
+                onPressed: (){}, 
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  fixedSize: Size(screenSize.width, screenSize.height*0.06)
+                ),
+                child: Text(
+                  'Back To Shopping',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400
+                    
+                  ),
+                )
+                )
+            ],
+          ),
+        ),
+
+      );
+
+    }
+    );
+
+  }
+
+
+ 
 }
