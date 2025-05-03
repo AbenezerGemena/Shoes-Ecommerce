@@ -70,6 +70,7 @@ class _ProfielScreenState extends State<ProfielScreen> {
                       )
                     ],
                   ),
+                  SizedBox(height: screenSize.height*0.025,),
 
                   SingleChildScrollView(
                     child: Column(
